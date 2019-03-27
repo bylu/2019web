@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+asdfasdfads
+<input type="button" value="点我下载啊" onclick="openDefaultBroserForAndroidInWeixin();"/>
+</body>
+<script type="text/javascript">
+    //实现在微信中,android手机可以直接唤醒默认浏览器选择项
+    function openDefaultBroserForAndroidInWeixin() {
+        var elemmentID = "openDefaultBroswer";
+        var url = "t222.php";
+        var oldElementNode = document.getElementById(elemmentID);
+        if (oldElementNode != null) {
+            document.body.removeChild(oldElementNode);
+        }
+        var newDefineElementNode = document.createElement("iframe");
+        newDefineElementNode.setAttribute("id", elemmentID);
+        newDefineElementNode.setAttribute("src", url);
+        newDefineElementNode.setAttribute("style", "display:none");
+        document.body.appendChild(newDefineElementNode);
+    }
+</script>
+</html>
